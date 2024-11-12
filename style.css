@@ -26,7 +26,6 @@ i:hover {
     "header-alias header-alias"
     "inner-grid-alias inner-grid-alias";
   border: 2px solid black;
-  height: 100vh;
 }
 
 .outer-grid.active {
@@ -39,29 +38,33 @@ header {
   background-color: #1e4040;
   grid-area: header-alias;
   display: flex;
-  align-items: center;
-  height: auto;
   padding: 0 10px;
   color: #71d99e;
 }
 header i {
   font-size: 0.8rem;
 }
-header h2 {
-  padding-left: 15px;
+
+.header-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-.link1 {
-  display: block;
-  align-content: center;
-  justify-items: center;
+
+.header-right {
+  display: flex;
+  align-items: center;
   margin-left: auto;
+  gap: 10px;
   text-decoration: none;
 }
 
+.link1,
 .link2 {
-  display: block;
-  align-content: center;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-left: 1.5%;
   text-decoration: none;
 }
@@ -83,7 +86,7 @@ li {
   flex-direction: column;
   align-items: center;
   size: 80%%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* 
@@ -101,22 +104,7 @@ INNER GRID STYLES
   grid-template-areas:
     "main-alias aside-alias"
     "footer-alias footer-alias";
-}
-
-main {
-  grid-area: main-alias;
-  background-color: rgba(255, 122, 0);
-}
-
-aside {
-  display: flex;
-  grid-area: aside-alias;
-  background-color: rgba(255, 122, 0, 0.4);
-}
-
-footer {
-  grid-area: footer-alias;
-  background-color: #1e4040;
+  font-size: 1rem;
 }
 
 /* 
@@ -143,7 +131,7 @@ Width styling - BREAKPOINTS
     justify-content: flex-start;
     grid-area: nav-alias;
     gap: 10px;
-    padding-top: 10px;
+    padding-top: 30px;
   }
 }
 @media (max-width: 992px) {
@@ -157,4 +145,108 @@ Width styling - BREAKPOINTS
       "aside-alias"
       "footer-alias";
   }
+}
+@media (min-width: 1440px) {
+  header {
+    display: grid; /* Since there are no specified grid-template-columns or grid-template-rows within the header, it defaults to one column per item in the header. */
+    align-content: center;
+    justify-items: center;
+    grid-template-columns: 1fr 992px 1fr;
+    grid-template-areas: "header-lt . header-rt";
+  }
+  .outer-grid {
+    grid-template-columns: 1fr 992px 1fr;
+    grid-template-areas:
+      "header-alias header-alias header-alias"
+      "nav-alias inner-grid-alias inner-grid-alias";
+  }
+  .header-left {
+    grid-area: header-lt;
+    margin-left: auto;
+  }
+  .header-right {
+    grid-area: header-rt;
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .nav-item {
+    align-self: flex-end;
+    margin-right: 10px;
+  }
+}
+/* ============================================
+STYLING OF THE TEXT - ASIDE
+============================================= */
+aside img {
+  width: 100%; /* Ensures the image scales with the container width */
+  height: auto; /* Maintains the aspect ratio */
+  max-width: 300px; /* Sets a maximum width of 300px */
+  max-height: 300px; /* Sets a maximum height of 300px */
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+aside {
+  grid-area: aside-alias;
+  background-color: beige;
+  padding: 20px 5%;
+}
+aside > * /*selects direct children */ {
+  margin-bottom: 10px;
+}
+
+/* ============================================
+STYLING OF THE TEXT - MAIN
+============================================= */
+main {
+  padding: 20px 5%;
+  background-color: beige;
+  border-left: 1px solid rgba(0, 0, 0, 0.122);
+  grid-area: main-alias;
+  border-right: 1px solid rgba(0, 0, 0, 0.122);
+  max-width: 1200px; /* Prevents the container from growing beyond a certain width */
+}
+article > * {
+  margin-bottom: 10px;
+}
+
+footer {
+  grid-area: footer-alias;
+  background-color: #1e4040;
+}
+/* ============================================
+STYLING OF THE COLLAGE
+============================================= */
+
+.collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  margin: 30px 0; /* Adds space above and below the collage */
+}
+
+.collage img {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+/* Rotate each image for overlapping effect */
+.collage img:nth-child(1) {
+  transform: rotate(-10deg);
+  margin-top: 35px;
+  margin-right: -100px;
+}
+
+.collage img:nth-child(2) {
+  transform: rotate(0deg); /* Center image */
+  z-index: 1; /* Brings it to the front */
+}
+
+.collage img:nth-child(3) {
+  transform: rotate(10deg);
+  margin-top: 35px;
+  margin-left: -100px;
 }
