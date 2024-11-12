@@ -26,6 +26,10 @@ i:hover {
     "header-alias header-alias"
     "inner-grid-alias inner-grid-alias";
   border: 2px solid black;
+<<<<<<< HEAD
+=======
+  height: 100vh;
+>>>>>>> 24fb7c8 (finished project css holy grail)
 }
 
 .outer-grid.active {
@@ -38,12 +42,18 @@ header {
   background-color: #1e4040;
   grid-area: header-alias;
   display: flex;
+<<<<<<< HEAD
+=======
+  align-items: center;
+  height: auto;
+>>>>>>> 24fb7c8 (finished project css holy grail)
   padding: 0 10px;
   color: #71d99e;
 }
 header i {
   font-size: 0.8rem;
 }
+<<<<<<< HEAD
 
 .header-left {
   display: flex;
@@ -65,6 +75,23 @@ header i {
   display: flex;
   flex-direction: column;
   align-items: center;
+=======
+header h2 {
+  padding-left: 15px;
+}
+.link1 {
+  display: block;
+  align-content: center;
+  justify-items: center;
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.link2 {
+  display: block;
+  align-content: center;
+  justify-items: center;
+>>>>>>> 24fb7c8 (finished project css holy grail)
   margin-left: 1.5%;
   text-decoration: none;
 }
@@ -86,7 +113,11 @@ li {
   flex-direction: column;
   align-items: center;
   size: 80%%;
+<<<<<<< HEAD
   margin-bottom: 5px;
+=======
+  margin-bottom: 10px;
+>>>>>>> 24fb7c8 (finished project css holy grail)
 }
 
 /* 
@@ -104,7 +135,26 @@ INNER GRID STYLES
   grid-template-areas:
     "main-alias aside-alias"
     "footer-alias footer-alias";
+<<<<<<< HEAD
   font-size: 1rem;
+=======
+}
+
+main {
+  grid-area: main-alias;
+  background-color: rgba(255, 122, 0);
+}
+
+aside {
+  display: flex;
+  grid-area: aside-alias;
+  background-color: rgba(255, 122, 0, 0.4);
+}
+
+footer {
+  grid-area: footer-alias;
+  background-color: #1e4040;
+>>>>>>> 24fb7c8 (finished project css holy grail)
 }
 
 /* 
@@ -131,7 +181,11 @@ Width styling - BREAKPOINTS
     justify-content: flex-start;
     grid-area: nav-alias;
     gap: 10px;
+<<<<<<< HEAD
     padding-top: 30px;
+=======
+    padding-top: 10px;
+>>>>>>> 24fb7c8 (finished project css holy grail)
   }
 }
 @media (max-width: 992px) {
@@ -146,6 +200,7 @@ Width styling - BREAKPOINTS
       "footer-alias";
   }
 }
+<<<<<<< HEAD
 @media (min-width: 1440px) {
   header {
     display: grid; /* Since there are no specified grid-template-columns or grid-template-rows within the header, it defaults to one column per item in the header. */
@@ -250,3 +305,5 @@ STYLING OF THE COLLAGE
   margin-top: 35px;
   margin-left: -100px;
 }
+=======
+>>>>>>> 24fb7c8 (finished project css holy grail)
